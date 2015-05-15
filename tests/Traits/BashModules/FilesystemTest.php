@@ -56,7 +56,7 @@ class FilesystemTest extends RocketeerTestCase
         $share    = $task->share($folder);
         $tempLink = $this->server.'/releases/20000000000000//src/foobar.txt-temp';
         $matcher  = [
-            sprintf('ln -s %s %s', 'shared//src/foobar.txt', $tempLink, $tempLink),
+            sprintf('ln -s %s %s', '../../../shared/src/foobar.txt', $tempLink, $tempLink),
             sprintf('mv -Tf %s %s', $tempLink, $this->server.'/releases/20000000000000//src/foobar.txt'),
         ];
 
